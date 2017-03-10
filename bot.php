@@ -24,7 +24,7 @@
                                     'type' => 'text',
                                     'text' => 'eiei'
                                     ]
-    ];
+    ]];
     
     echo $data;
 //    $content = {
