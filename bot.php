@@ -12,7 +12,7 @@
     $channelSecret = '6ff3fa91e07dac67e9088b03b2486981';
     
     $data = array(
-            'events' => array(array(
+            'events' => array(
                     'replyToken' => 'sss',
                     'type' => 'message',
                     'timestamp' => 'sssssss',
@@ -24,7 +24,7 @@
                                     'type' => 'text',
                                     'text' => 'eiei'
                                     )
-    )));
+    ));
 
 //    echo json_encode($data);
     
