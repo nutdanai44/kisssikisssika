@@ -33,7 +33,7 @@
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi2');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi_');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
@@ -46,7 +46,7 @@
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
                 
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('sticker');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('stickerห');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
