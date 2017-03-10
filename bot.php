@@ -24,27 +24,27 @@
                                              'text' => 'eiei'
                                              )
                           )
-    echo json_decode($data1)
-//    $data = array('events' => json_decode($data1));
-
-//    $content = {
-//        "events": [
-//        {
-//            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
-//            "type": "message",
-//            "timestamp": 1462629479859,
-//            "source": {
-//                "type": "user",
-//                "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
-//            },
-//            "message": {
-//                "id": "325708",
-//                "type": "text",
-//                "text": "Hello, world"
-//            }
-//        }
-//        ]
-//    }
+    echo json_decode($data1,true)
+////    $data = array('events' => json_decode($data1));
+//
+////    $content = {
+////        "events": [
+////        {
+////            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+////            "type": "message",
+////            "timestamp": 1462629479859,
+////            "source": {
+////                "type": "user",
+////                "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
+////            },
+////            "message": {
+////                "id": "325708",
+////                "type": "text",
+////                "text": "Hello, world"
+////            }
+////        }
+////        ]
+////    }
 //    // Get POST body content
 ////    $content = file_get_contents('php://input');
 //    // Parse JSON
