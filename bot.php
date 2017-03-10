@@ -26,7 +26,8 @@
                                     )
     ));
 
-//    echo json_encode($data);
+    echo json_encode($data);
+    echo "\n\n"
     
 //    $content = {
 //        "events": [
