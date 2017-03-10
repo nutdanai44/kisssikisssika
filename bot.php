@@ -24,7 +24,7 @@
                                              'text' => 'eiei'
                                              )
                           )
-    echo json_encode($data1)
+    echo json_decode($data1)
 ////    $data = array('events' => json_decode($data1));
 //
 ////    $content = {
