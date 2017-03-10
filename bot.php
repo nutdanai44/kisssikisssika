@@ -47,7 +47,7 @@
     // Get POST body content
 //    $content = file_get_contents('php://input');
     // Parse JSON
-    $events = $data;
+    $events = json_decode($data);
     
     // Validate parsed JSON data
     if (!is_null($events['events'])) {
