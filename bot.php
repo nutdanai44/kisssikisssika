@@ -40,11 +40,8 @@
                 
             } else if ($event['type'] == 'sticker'){
                 
-                // Get text sent
-                $text = $event['message']['text'];
                 // Get replyToken
                 $replyToken = $event['replyToken'];
-                
                 
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
