@@ -29,7 +29,7 @@
             $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
             $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
             
-            if ($event['type'] == 'message') && ($event['message']['type'] == 'text'){
+            if (($event['type'] == 'message') && ($event['message']['type'] == 'text'){
                 // Get text sent
                 $text = $event['message']['text'];
     
