@@ -14,7 +14,7 @@
     $data = array(
             'events' => array(
                     'replyToken' => 'sss',
-                    'type' => 'text',
+                    'type' => 'message',
                     'timestamp' => 'sssssss',
                     'source' => array(
                                 'type' => 'user',
@@ -97,5 +97,7 @@
 //                echo $result . "\r\n";
             }
         }
+    } else {
+        echo "5555eiei";
     }
     echo "OK";
