@@ -25,24 +25,28 @@
             $replyToken = $event['replyToken'];
             
             // Reply only when message sent is in 'text' format
-            if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+            
+            $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+            $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+            
+            if ($event['type'] == 'message') {
+                if ($event['message']['type'] == 'text') {
 
                 // Get text sent
                 $text = $event['message']['text'];
     
-                $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-                $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
     
                 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi_');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-                
+                } else {
+                    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder('sticker??');
+                    $response = $bot->replyMessage($replyToken, $textMessageBuilder);
+                    
+                    echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+                }
             } else {
-                
-                $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-                $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-                
                 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['type']);
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
