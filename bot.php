@@ -26,20 +26,17 @@
 //            echo "1";
 //            // Reply only when message sent is in 'text' format
 //            if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-//                
-//                echo "2";
+//
 //                // Get text sent
 //                $text = $event['message']['text'];
-                echo "3";
                 // Get replyToken
 //                $replyToken = $event['replyToken'];
     $replyToken = 'ssss';
-                
-                echo "ss";
-                
+    
+    
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-                
+                echo "sds";
 //                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
                 $response = $bot->replyMessage($replyToken, 'uu');
                 
