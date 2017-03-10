@@ -29,11 +29,11 @@
             $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
             $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
             
-            if (($event['type'] == 'message') && ($event['message']['type'] == 'text'){
+            if (($event['type'] == 'message') && ($event['message']['type'] == 'text')){
                 // Get text sent
                 $text = $event['message']['text'];
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi4');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi5');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
@@ -64,7 +64,5 @@
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
             }
         }
-//    } else {
-//        echo "5555eiei";
     }
     echo "OK";
