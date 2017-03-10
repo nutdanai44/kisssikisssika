@@ -11,7 +11,7 @@
     $access_token = 'NtUwOPOhEsXR2X/96S2sY25kI1ZB9Kf57jSWfEdApNs6nIzaNr1+Tb+O4tIfKxF28e0GolRIKIXWkLcL3FovLPSjheL6H6Ez+u0U9YLckFV+OX7T27DHqX5oJlilaK5/ou6fSviCF4GCj4wL9U5aCwdB04t89/1O/w1cDnyilFU=';
     $channelSecret = '6ff3fa91e07dac67e9088b03b2486981';
     
-    $data1 =  json_encode(array(
+    $data1 =  array(
                           'replyToken' => 'sss',
                           'type' => 'message',
                           'timestamp' => 'sssssss',
@@ -23,8 +23,8 @@
                                              'type' => 'text',
                                              'text' => 'eiei'
                                              )
-                          ))
-    echo json_decode($data1,true)
+                          )
+    echo $data1
 ////    $data = array('events' => json_decode($data1));
 //
 ////    $content = {
