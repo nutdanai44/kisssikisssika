@@ -13,9 +13,9 @@
     
     
 //    // Get POST body content
-//    $content = file_get_contents('php://input');
+    $content = file_get_contents('php://input');
 //    // Parse JSON
-//    $events = json_decode($content, true);
+    $events = json_decode($content, true);
 //    // Validate parsed JSON data
 //    if (!is_null($events['events'])) {
 //        // Loop through each event
@@ -25,7 +25,7 @@
 //                // Get text sent
 //                $text = $event['message']['text'];
 //                // Get replyToken
-//                $replyToken = $event['replyToken'];
+                $replyToken = $event['replyToken'];
     
                 
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
