@@ -28,6 +28,7 @@
                 $replyToken = $event['replyToken'];
     
                 
+                echo "ss";
                 
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
