@@ -1,7 +1,11 @@
 <?php
     
-//    include 'vendor/autolod.php';
-//    use linecorp
+    include ('vendor/autoload.php');
+    use \LINE\LINEBot;
+    use \LINE\LINEBot\HTTPClient;
+    use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
+    use \LINE\LINEBot\MessageBuilder;
+    use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
     
 //    $access_token = "http://kisssikisssika.herokuapp.com/config.php";
     $access_token = 'NtUwOPOhEsXR2X/96S2sY25kI1ZB9Kf57jSWfEdApNs6nIzaNr1+Tb+O4tIfKxF28e0GolRIKIXWkLcL3FovLPSjheL6H6Ez+u0U9YLckFV+OX7T27DHqX5oJlilaK5/ou6fSviCF4GCj4wL9U5aCwdB04t89/1O/w1cDnyilFU=';
