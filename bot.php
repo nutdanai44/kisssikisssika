@@ -11,65 +11,29 @@
     $access_token = 'NtUwOPOhEsXR2X/96S2sY25kI1ZB9Kf57jSWfEdApNs6nIzaNr1+Tb+O4tIfKxF28e0GolRIKIXWkLcL3FovLPSjheL6H6Ez+u0U9YLckFV+OX7T27DHqX5oJlilaK5/ou6fSviCF4GCj4wL9U5aCwdB04t89/1O/w1cDnyilFU=';
     $channelSecret = '6ff3fa91e07dac67e9088b03b2486981';
     
-    $data = array(
-            'events' => array(
-                    'replyToken' => 'sss',
-                    'type' => 'message',
-                    'timestamp' => 'sssssss',
-                    'source' => array(
-                                'type' => 'user',
-                                'userId' => 'sssssss'
-                                ),
-                    'message' => array('id' => '325708',
-                                    'type' => 'text',
-                                    'text' => 'eiei'
-                                    )
-    ));
-
-    echo json_encode($data);
-    echo "\n\n";
-    
-//    $content = {
-//        "events": [
-//        {
-//            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
-//            "type": "message",
-//            "timestamp": 1462629479859,
-//            "source": {
-//                "type": "user",
-//                "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
-//            },
-//            "message": {
-//                "id": "325708",
-//                "type": "text",
-//                "text": "Hello, world"
-//            }
-//        }
-//        ]
-//    }
     // Get POST body content
 //    $content = file_get_contents('php://input');
     // Parse JSON
-    $events = json_encode($data);
-    
-    // Validate parsed JSON data
-    if (!is_null($events['events'])) {
-        // Loop through each event
-        
-        echo $events['events'];
-        foreach ($events['events'] as $event) {
-            
-            echo "1";
-            // Reply only when message sent is in 'text' format
-            if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-                
-                echo "2";
-                // Get text sent
-                $text = $event['message']['text'];
+//    $events = json_encode($data);
+//    
+//    // Validate parsed JSON data
+//    if (!is_null($events['events'])) {
+//        // Loop through each event
+//        
+//        echo $events['events'];
+//        foreach ($events['events'] as $event) {
+//            
+//            echo "1";
+//            // Reply only when message sent is in 'text' format
+//            if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+//                
+//                echo "2";
+//                // Get text sent
+//                $text = $event['message']['text'];
                 echo "3";
                 // Get replyToken
-                $replyToken = $event['replyToken'];
-    
+//                $replyToken = $event['replyToken'];
+    $replyToken = 'ssss'
                 
                 echo "ss";
                 
@@ -105,9 +69,9 @@
 //                curl_close($ch);
 //                
 //                echo $result . "\r\n";
-            }
-        }
-    } else {
-        echo "5555eiei";
-    }
+//            }
+//        }
+//    } else {
+//        echo "5555eiei";
+//    }
     echo "OK";
