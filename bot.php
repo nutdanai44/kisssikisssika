@@ -26,7 +26,7 @@
                                     )
     )));
 
-    echo json_encode($data);
+//    echo json_encode($data);
     
 //    $content = {
 //        "events": [
@@ -49,7 +49,7 @@
     // Get POST body content
 //    $content = file_get_contents('php://input');
     // Parse JSON
-    $events = json_decode($data,true);
+    $events = json_encode($data);
     
     // Validate parsed JSON data
     if (!is_null($events['events'])) {
