@@ -19,7 +19,7 @@
     if (!is_null($events['events'])) {
         // Loop through each event
         
-        echo $events['events'];
+        echo "has data";
         foreach ($events['events'] as $event) {
 
             // Reply only when message sent is in 'text' format
@@ -31,13 +31,13 @@
                 $replyToken = $event['replyToken'];
     
     
-//                $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-//                $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-//    
-//                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
-//                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
-//                
-//                echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+                $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+                $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+    
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
+                
+                echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
                 
                 // Build message to reply back
                 $messages = [
