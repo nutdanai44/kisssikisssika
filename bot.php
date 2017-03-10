@@ -50,9 +50,9 @@
     $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
     $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'bc']);
     
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+//    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
     
-    echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+//    echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
     
-    echo "OK";
+//    echo "OK";
