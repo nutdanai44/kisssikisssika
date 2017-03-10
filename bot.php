@@ -15,20 +15,19 @@
     $content = file_get_contents('php://input');
     // Parse JSON
     $events = json_encode($data);
-//
-//    // Validate parsed JSON data
-//    if (!is_null($events['events'])) {
-//        // Loop through each event
-//        
-//        echo $events['events'];
-//        foreach ($events['events'] as $event) {
-//            
-//            echo "1";
-//            // Reply only when message sent is in 'text' format
-//            if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-//
-//                // Get text sent
-//                $text = $event['message']['text'];
+
+    // Validate parsed JSON data
+    if (!is_null($events['events'])) {
+        // Loop through each event
+        
+        echo $events['events'];
+        foreach ($events['events'] as $event) {
+
+            // Reply only when message sent is in 'text' format
+            if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+
+                // Get text sent
+                $text = $event['message']['text'];
                 // Get replyToken
                 $replyToken = $event['replyToken'];
     
@@ -36,8 +35,8 @@
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
     
-//                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
-                $response = $bot->replyMessage($replyToken, 'uu');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
                 
@@ -65,9 +64,9 @@
 //                curl_close($ch);
 //                
 //                echo $result . "\r\n";
-//            }
-//        }
+            }
+        }
 //    } else {
 //        echo "5555eiei";
-//    }
+    }
     echo "OK";
