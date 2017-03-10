@@ -20,15 +20,15 @@
         
         echo "has data";
         foreach ($events['events'] as $event) {
-
+            
+            // Get replyToken
+            $replyToken = $event['replyToken'];
+            
             // Reply only when message sent is in 'text' format
             if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 
                 // Get text sent
                 $text = $event['message']['text'];
-                // Get replyToken
-                $replyToken = $event['replyToken'];
-    
     
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
@@ -38,10 +38,7 @@
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
                 
-            } else if ($event['type'] == 'sticker'){
-                
-                // Get replyToken
-                $replyToken = $event['replyToken'];
+            } else {
                 
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
