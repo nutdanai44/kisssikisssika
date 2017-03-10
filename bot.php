@@ -33,28 +33,30 @@
                 // Get text sent
                 $text = $event['message']['text'];
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi8');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
-                echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-            } else {
+            } else if (($event['type'] == 'message') && ($event['message']['type'] == 'sticker')) {
                 $columns = array();
                 $img_url = 'http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg';
                 for($i=0;$i<5;$i++)
                 {
                     $actions = array(
                                      //                                         action
-                                     new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('ปุ่ม1','a'),
-                                     new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('ปุ่ม2','http://www.google.com')
+                        new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('ปุ่ม1','a'),
+                        new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('ปุ่ม2','http://www.google.com')
                                      );
-                    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder('คอลั่ม1'.$i, 'คอลั่ม2'.$i, $img_url , $actions);
+                    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder('คอลั่ม1', 'คอลั่ม2', $img_url , $actions);
                     $columns[] = $column;
                 }
                 $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
                 $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('ก็มิรู้สินะ', $carousel);
                 $response = $bot->replyMessage($replyToken,$msg);
-                echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+            } else {
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['type']);
+                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
             }
+            echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
         }
     }
     echo "OK";
