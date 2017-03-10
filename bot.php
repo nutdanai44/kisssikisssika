@@ -44,7 +44,7 @@
                 $messages = [
                 'type' => 'text',
                 'text' => $text
-                ]
+                ];
                 
                 // Make a POST Request to Messaging API to reply to sender
                 $url = 'https://api.line.me/v2/bot/message/reply';
