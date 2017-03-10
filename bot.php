@@ -1,6 +1,6 @@
 <?php
     
-    $access_token = "http://kisssikisssika.herokuapp.com/configToken.php";
+    $access_token = "http://kisssikisssika.herokuapp.com/config.php";
     
     // Get POST body content
     $content = file_get_contents('php://input');

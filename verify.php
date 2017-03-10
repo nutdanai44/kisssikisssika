@@ -1,6 +1,6 @@
 <?php
     
-$access_token = "http://kisssikisssika.herokuapp.com/configToken.php";
+$access_token = "http://kisssikisssika.herokuapp.com/config.php";
     
 $url = 'https://api.line.me/v1/oauth/verify';
 
