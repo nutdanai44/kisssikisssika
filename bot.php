@@ -33,7 +33,7 @@
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi2');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
