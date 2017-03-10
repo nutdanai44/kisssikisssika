@@ -13,12 +13,12 @@
     
     $data = array(
             'events' => array(
-                    'replyToken' => $replyToken,
+                    'replyToken' => 'sss',
                     'type' => 'text',
-                    'timestamp' => 1462629479859,
+                    'timestamp' => 'sssssss',
                     'source' => array(
                                 'type' => 'user',
-                                'userId => 'U206d25c2ea6bd87c17655609a1c37cb8'
+                                'userId' => 'sssssss'
                                 ),
                     'message' => array('id' => '325708',
                                     'type' => 'text',
