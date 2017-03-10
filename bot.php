@@ -15,7 +15,7 @@
             'events' => array(
                     'replyToken' => $replyToken,
                     'type' => 'text',
-                    'timestamp' =>1462629479859,
+                    'timestamp' => 1462629479859,
                     'source' => array(
                                 'type' => 'user',
                                 'userId => 'U206d25c2ea6bd87c17655609a1c37cb8'
@@ -26,7 +26,7 @@
                                     )
     ));
     
-    echo $data;
+    echo json_encode($data);
 //    $content = {
 //        "events": [
 //        {
