@@ -33,7 +33,7 @@
                 echo "3";
                 // Get replyToken
 //                $replyToken = $event['replyToken'];
-    $replyToken = 'ssss'
+    $replyToken = 'ssss';
                 
                 echo "ss";
                 
