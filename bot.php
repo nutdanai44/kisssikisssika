@@ -12,10 +12,10 @@
     $channelSecret = '6ff3fa91e07dac67e9088b03b2486981';
     
     // Get POST body content
-//    $content = file_get_contents('php://input');
+    $content = file_get_contents('php://input');
     // Parse JSON
-//    $events = json_encode($data);
-//    
+    $events = json_encode($data);
+//
 //    // Validate parsed JSON data
 //    if (!is_null($events['events'])) {
 //        // Loop through each event
@@ -30,13 +30,12 @@
 //                // Get text sent
 //                $text = $event['message']['text'];
                 // Get replyToken
-//                $replyToken = $event['replyToken'];
-    $replyToken = 'ssss';
+                $replyToken = $event['replyToken'];
     
     
                 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
                 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-                echo "sds";
+    
 //                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
                 $response = $bot->replyMessage($replyToken, 'uu');
                 
