@@ -54,6 +54,8 @@
     // Validate parsed JSON data
     if (!is_null($events['events'])) {
         // Loop through each event
+        
+        echo $events['events'];
         foreach ($events['events'] as $event) {
             
             echo "1";
