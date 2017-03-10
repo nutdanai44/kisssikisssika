@@ -33,8 +33,24 @@
                 
                 // Build message to reply back
                 $messages = [
-                'type' => 'text',
-                'text' => $text
+//                'type' => 'text',
+//                'text' => $text
+                
+                    'type' => 'template',
+                    'altText' => $text,
+                    'template' => [
+                        'type'=> 'carousel',
+                        'columns' => [
+                                'thumbnailImageUr'=> 'https://example.com/bot/images/image.jpg',
+                                'title' => 'Menu',
+                                'text' => 'Please select',
+                                'actions' => [
+                                        'type' => 'postback',
+                                        'label' => 'Buy',
+                                        'data' => 'action=buy&itemid=111'
+                                        ]
+                        ]
+                    ]
                 ];
                 
                 // Make a POST Request to Messaging API to reply to sender
