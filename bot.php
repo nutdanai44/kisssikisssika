@@ -33,34 +33,26 @@
                 // Get text sent
                 $text = $event['message']['text'];
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi6');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi7');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
             } else {
-//                $columns = array();
-//                $img_url = "http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg";
-//                for($i=0;$i<5;$i++)
-//                {
-//                    $actions = array(
-//                                     //                                         action
-//                                     new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ปุ่ม1","a"),
-//                                     new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ปุ่ม2","http://www.google.com")
-//                                     );
-//                    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("คอลั่ม1".$i, "คอลั่ม2".$i, $img_url , $actions);
-//                    $columns[] = $column;
-//                }
-//                $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
-//                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ก็มิรู้สินะ", $carousel);
-//                $response = $bot->replyMessage($replyToken,$msg);
-                $actions = array(
-                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("是", "ans=Y"),
-                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("否", "ans=N")
-                                 );
-                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("問題", $actions);
-                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("這訊息要用手機的賴才看的到哦", $button);
+                $columns = array();
+                $img_url = "http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg";
+                for($i=0;$i<5;$i++)
+                {
+                    $actions = array(
+                                     //                                         action
+                                     new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ปุ่ม1","a"),
+                                     new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ปุ่ม2","http://www.google.com")
+                                     );
+                    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("คอลั่ม1".$i, "คอลั่ม2".$i, $img_url , $actions);
+                    $columns[] = $column;
+                }
+                $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ก็มิรู้สินะ", $carousel);
                 $response = $bot->replyMessage($replyToken,$msg);
-                
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
             }
         }
