@@ -36,7 +36,7 @@
                 $text = $event['message']['text'];
     
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi_');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi3');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
                 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
@@ -59,7 +59,7 @@
                 $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
                 $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ก็มิรู้สินะ", $carousel);
                 $bot->replyMessage($replyToken,$msg);
-                echo $bot
+                echo $bot;
             }
         }
 //    } else {
