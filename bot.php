@@ -30,7 +30,7 @@
                 // Get text sent
                 $text = $event['message']['text'];
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi5');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi6');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
             } else if (($event['type'] == 'message') && ($event['message']['type'] == 'sticker')) {
@@ -44,7 +44,7 @@
                                  new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("上一頁", "page=1")
                                  );
                 
-                $img_url = "http://cdn.jssor.com/demos/img/photography/003.jpg";
+                $img_url = "https://f.ptcdn.info/646/048/000/ojwkqtow6zfH0HGvS6q-o.jpg";
                 $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("按鈕文字","說明", $img_url, $actions);
                 $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("這訊息要用手機的賴才看的到哦", $button);
                 $bot->replyMessage($replyToken,$msg);
