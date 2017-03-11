@@ -1,6 +1,6 @@
 <?php
 
-$api_key = YOUR_API_KEY;
+$api_key = "AIzaSyAl5oFXk9k__21zVBynetHIaf_LD0utaf0";
 $cvurl = "https://vision.googleapis.com/v1/images:annotate?key=" . $api_key;
 $type = "TEXT_DETECTION";
 
@@ -29,7 +29,10 @@ if ($_FILES['photo']['name']) {
                             "type": "' .$type. '",
                             "maxResults": 200
                           }
-                      ]
+                        ],
+                        "imageContext" : [
+                        "languageHints" : ["en","th"]
+                        ]
                     }
                 ]
             }';
