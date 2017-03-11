@@ -33,7 +33,7 @@ if ($_FILES['photo']['name']) {
                           }
                         ],
                         "imageContext" : [
-                        "languageHints" : {"en","th"}
+                        "languageHints" : ["en","th"]
                         ]
                     }
                 ]
