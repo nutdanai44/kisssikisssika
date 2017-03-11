@@ -60,7 +60,7 @@
 //                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder('sad', 'page=1')
                                  );
                 
-                $img_url = 'http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg';
+                $img_url = 'http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg,http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg';
                 $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder('ee','rr', $img_url, $actions);
                 $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('uiuiui', $button);
                 $response = $bot->replyMessage($replyToken,$msg);
