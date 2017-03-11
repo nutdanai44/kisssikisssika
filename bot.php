@@ -39,8 +39,8 @@
             } else if (($event['type'] == 'message') && ($event['message']['type'] == 'sticker')) {
                 $columns = array();
                 $img_url = 'http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg';
-                for($i=0;$i<5;$i++)
-                {
+//                for($i=0;$i<5;$i++)
+//                {
                     $actions = array(
                                      //                                         action
                         new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('ปุ่ม1','a'),
@@ -48,7 +48,7 @@
                                      );
                     $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder('คอลั่ม1', 'คอลั่ม2', $img_url , $actions);
                     $columns[] = $column;
-                }
+//                }
                 $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
                 $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('ก็มิรู้สินะ', $carousel);
                 $response = $bot->replyMessage($replyToken,$msg);
