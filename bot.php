@@ -33,7 +33,7 @@
                 // Get text sent
                 $text = $event['message']['text'];
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi2');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi3');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
             } else if (($event['type'] == 'message') && ($event['message']['type'] == 'sticker')) {
@@ -53,16 +53,11 @@
 //                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('ก็มิรู้สินะ', $carousel);
 //                $response = $bot->replyMessage($replyToken,$msg);
                 $actions = array(
-                                 new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('aa','ss1'),
-                                 new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Google','http://www.google.com')
-//                                 ,
-//                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder('sssdd', 'page=3'),
-//                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder('sad', 'page=1')
+                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("是", "ans=Y"),
+                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("否", "ans=N")
                                  );
-                
-                $img_url = 'http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg,http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg';
-                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder('ee','rr', $img_url, $actions);
-                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('uiuiui', $button);
+                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("問題", $actions);
+                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("這訊息要用手機的賴才看的到哦", $button);
                 $response = $bot->replyMessage($replyToken,$msg);
             } else {
                 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['type']);
