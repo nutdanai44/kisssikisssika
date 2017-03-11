@@ -59,7 +59,7 @@
                     $response = $bot->replyMessage($replyToken,$msg);
                                  
             } else if (($event['type'] == 'message') && ($event['message']['type'] == 'image')){
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event);
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']);
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
             } else {
                 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['type']);
