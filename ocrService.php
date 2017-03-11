@@ -32,9 +32,9 @@ if ($_FILES['photo']['name']) {
                             "maxResults": 200
                           }
                         ],
-                        "imageContext" : [
+                        "imageContext" : {
                         "languageHints" : ["en","th"]
-                        ]
+                        }
                     }
                 ]
             }';
