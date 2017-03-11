@@ -1,8 +1,8 @@
 <?php
 
-//$api_key = "AIzaSyAl5oFXk9k__21zVBynetHIaf_LD0utaf0";
+$api_key = "AIzaSyAl5oFXk9k__21zVBynetHIaf_LD0utaf0";
     
-$api_key = "";
+//$api_key = "";
 $cvurl = "https://vision.googleapis.com/v1/images:annotate?key=" . $api_key;
 $type = "TEXT_DETECTION";
 
