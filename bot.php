@@ -10,62 +10,62 @@
     $channelSecret = '6ff3fa91e07dac67e9088b03b2486981';
     
     // Get POST body content
-//    $content = file_get_contents('php://input');
-//    // Parse JSON
-//    $events = json_decode($content, true);
-//    // Validate parsed JSON data
-//    if (!is_null($events['events'])) {
-//        
-//        echo "has data";
-//        foreach ($events['events'] as $event) {
-//            
-//            // Get replyToken
-//            $replyToken = $event['replyToken'];
-//            
-//            // Reply only when message sent is in 'text' format
-//            
-//            $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-//            $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-//            
-//            if (($event['type'] == 'message') && ($event['message']['type'] == 'text')){
-//                // Get text sent
-//                $text = $event['message']['text'];
-//    
-//                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi7');
-//                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
-//                
-//            } else if (($event['type'] == 'message') && ($event['message']['type'] == 'sticker')) {
-////                $actions = array(
-////                    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กด1","a"),
-////                    new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google","http://www.google.com"),
-//////                    new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("event", "page=3"),
-////
-////                $img_url = "https://f.ptcdn.info/646/048/000/ojwkqtow6zfH0HGvS6q-o.jpg";
-////                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("try","no", $img_url, $actions);
-////                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ok", $button);
-////                $bot->replyMessage($replyToken,$msg);
-//                
-//                $columns = array();
+    $content = file_get_contents('php://input');
+    // Parse JSON
+    $events = json_decode($content, true);
+    // Validate parsed JSON data
+    if (!is_null($events['events'])) {
+        
+        echo "has data";
+        foreach ($events['events'] as $event) {
+            
+            // Get replyToken
+            $replyToken = $event['replyToken'];
+            
+            // Reply only when message sent is in 'text' format
+            
+            $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+            $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+            
+            if (($event['type'] == 'message') && ($event['message']['type'] == 'text')){
+                // Get text sent
+                $text = $event['message']['text'];
+    
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi7');
+                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
+                
+            } else if (($event['type'] == 'message') && ($event['message']['type'] == 'sticker')) {
+//                $actions = array(
+//                    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กด1","a"),
+//                    new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google","http://www.google.com"),
+////                    new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("event", "page=3"),
+//
 //                $img_url = "https://f.ptcdn.info/646/048/000/ojwkqtow6zfH0HGvS6q-o.jpg";
-//                for($i=0;$i<5;$i++) {
-//                    $actions = array(
-//                       new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ปุ่ม1","1"),
-//                       new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("บาย","http://www.google.com")
-//                        );
-//                    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("คอ".$i, "คอ2".$i, $img_url , $actions);
-//                    $columns[] = $column;
-//                                 }
-//                    $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
-//                    $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("บายๆ", $carousel);
-//                    $response = $bot->replyMessage($replyToken,$msg);
-//                                 
-//            } else if (($event['type'] == 'message') && ($event['message']['type'] == 'image')){
-//                
-//            } else {
-//                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['type']);
-//                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
-//            }
-//            echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-//        }
-//    }
+//                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("try","no", $img_url, $actions);
+//                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ok", $button);
+//                $bot->replyMessage($replyToken,$msg);
+                
+                $columns = array();
+                $img_url = "https://f.ptcdn.info/646/048/000/ojwkqtow6zfH0HGvS6q-o.jpg";
+                for($i=0;$i<5;$i++) {
+                    $actions = array(
+                       new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ปุ่ม1","1"),
+                       new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("บาย","http://www.google.com")
+                        );
+                    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("คอ".$i, "คอ2".$i, $img_url , $actions);
+                    $columns[] = $column;
+                                 }
+                    $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+                    $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("บายๆ", $carousel);
+                    $response = $bot->replyMessage($replyToken,$msg);
+                                 
+            } else if (($event['type'] == 'message') && ($event['message']['type'] == 'image')){
+                
+            } else {
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['type']);
+                $response = $bot->replyMessage($replyToken, $textMessageBuilder);
+            }
+            echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+        }
+    }
     echo "OK";
