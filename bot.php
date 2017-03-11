@@ -33,32 +33,32 @@
                 // Get text sent
                 $text = $event['message']['text'];
     
-                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi3');
+                $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hi4');
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
                 
             } else if (($event['type'] == 'message') && ($event['message']['type'] == 'sticker')) {
-//                $columns = array();
-//                $img_url = 'http://www.bktube.net/wp-content/uploads/2017/01/XXX003.jpg';
-//                for($i=0;$i<5;$i++)
-//                {
-//                    $actions = array(
-//                                     //                                         action
-//                        new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('ปุ่ม1','a'),
-//                        new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('ปุ่ม2','http://www.google.com')
-//                                     );
-//                    $column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder('คอลั่ม1', 'คอลั่ม2', $img_url , $actions);
-//                    $columns[] = $column;
-//                }
-//                $carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
-//                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('ก็มิรู้สินะ', $carousel);
-//                $response = $bot->replyMessage($replyToken,$msg);
                 $actions = array(
-                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ตกลง", "ans=Y"),
-                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ยกเลิก", "ans=N")
+                                 //一般訊息型 action
+                                 new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("按鈕1","文字1"),
+                                 //網址型 action
+                                 new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google","http://www.google.com"),
+                                 //下列兩筆均為互動型action
+                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("下一頁", "page=3"),
+                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("上一頁", "page=1")
                                  );
-                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("ตอบๆมาเหอะ", $actions);
-                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ตามนั้น", $button);
-                $response = $bot->replyMessage($replyToken,$msg);
+                
+                $img_url = "圖片網址，必需為 https (圖片非必填欄位)";
+                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("按鈕文字","說明", $img_url, $actions);
+                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("這訊息要用手機的賴才看的到哦", $button);
+                $bot->replyMessage($replyToken,$msg);
+//                $response = $bot->replyMessage($replyToken,$msg);
+//                $actions = array(
+//                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ตกลง", "ans=Y"),
+//                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ยกเลิก", "ans=N")
+//                                 );
+//                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("ตอบๆมาเหอะ", $actions);
+//                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ตามนั้น", $button);
+//                $response = $bot->replyMessage($replyToken,$msg);
             } else {
                 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['type']);
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
