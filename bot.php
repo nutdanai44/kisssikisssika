@@ -58,16 +58,6 @@
                     $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("บายๆ", $carousel);
                     $response = $bot->replyMessage($replyToken,$msg);
                                  
-//                                 box
-//                $response = $bot->replyMessage($replyToken,$msg);
-//                $actions = array(
-//                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ตกลง", "ans=Y"),
-//                                 new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ยกเลิก", "ans=N")
-//                                 );
-//                $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("ตอบๆมาเหอะ", $actions);
-//                $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("ตามนั้น", $button);
-//                $response = $bot->replyMessage($replyToken,$msg);
-                                 
             } else {
                 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['type']);
                 $response = $bot->replyMessage($replyToken, $textMessageBuilder);
