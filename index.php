@@ -1,3 +1,4 @@
 <?php
-  echo "bla bla";
+  echo $_POST["txtUsername"];
+  echo $_POST["txtPassword"];
 ?>
